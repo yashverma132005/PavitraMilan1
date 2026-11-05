@@ -1,0 +1,130 @@
+/* ============================================
+   Pavitra Milan Design System — CSS Variables
+   Royal Heritage Theme: Burgundy · Gold · Ivory · Charcoal
+   ============================================ */
+
+:root {
+  /* === Backgrounds (Warm Ivory) === */
+  --bg-primary: #F8F3ED;           /* Warm Ivory canvas */
+  --bg-secondary: #FFFFFF;         /* Crisp card surfaces */
+  --bg-elevated: #F0E8DE;          /* Subtle elevated containers */
+  --bg-hover: #E9DDD1;             /* Interactive hover tint */
+  --bg-input: #FAF7F2;             /* Input field backgrounds */
+
+  /* === Primary: Royal Burgundy === */
+  --color-primary: #641E35;
+  --color-primary-hover: #4D1427;
+  --color-primary-light: rgba(100, 30, 53, 0.10);
+  --color-primary-dark: #380C1A;
+  --gradient-primary: linear-gradient(135deg, #641E35 0%, #4D1427 100%);
+  --gradient-hero: linear-gradient(135deg, #F8F3ED 0%, #F0E8DE 50%, #E9DDD1 100%);
+  --gradient-accent: linear-gradient(135deg, #641E35 0%, #C49A6C 100%);
+
+  /* === Secondary Accent: Antique Gold === */
+  --color-secondary: #C49A6C;
+  --color-secondary-hover: #B38656;
+  --color-secondary-light: rgba(196, 154, 108, 0.15);
+  --gradient-gold: linear-gradient(135deg, #C49A6C 0%, #DFBA8F 50%, #B88B58 100%);
+
+  /* === Typography: Warm Charcoal === */
+  --text-primary: #342B2B;
+  --text-secondary: #5A4D4D;
+  --text-muted: #8E8282;
+  --text-inverse: #F8F3ED;
+
+  /* === Borders === */
+  --border-color: rgba(52, 43, 43, 0.10);
+  --border-light: rgba(196, 154, 108, 0.20);
+  --border-focus: rgba(100, 30, 53, 0.55);
+
+  /* === Semantic Colors === */
+  --color-success: #2ec4b6;
+  --color-success-light: rgba(46, 196, 182, 0.15);
+  --color-error: #e63946;
+  --color-error-light: rgba(230, 57, 70, 0.15);
+  --color-warning: #C49A6C;
+  --color-warning-light: rgba(196, 154, 108, 0.15);
+  --color-info: #6B4F3A;
+  --color-info-light: rgba(107, 79, 58, 0.15);
+
+  /* === Shadows === */
+  --shadow-sm: 0 2px 6px rgba(52, 43, 43, 0.04);
+  --shadow-md: 0 6px 18px rgba(52, 43, 43, 0.07);
+  --shadow-lg: 0 12px 32px rgba(52, 43, 43, 0.10);
+  --shadow-xl: 0 24px 64px rgba(52, 43, 43, 0.13);
+  --shadow-primary: 0 4px 20px rgba(100, 30, 53, 0.25);
+  --shadow-gold: 0 4px 20px rgba(196, 154, 108, 0.30);
+  --shadow-glow: 0 0 30px rgba(100, 30, 53, 0.12);
+
+  /* === Border Radius === */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-full: 9999px;
+
+  /* === Typography === */
+  --font-primary: 'Inter', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 2rem;
+  --fs-4xl: 2.5rem;
+  --fs-5xl: 3.5rem;
+  --fs-6xl: 4.5rem;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+
+  /* === Spacing === */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
+
+  /* === Transitions === */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-spring: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* === Z-Index === */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-tooltip: 500;
+
+  /* === Glass Effect (Warm Ivory) === */
+  --glass-bg: rgba(248, 243, 237, 0.90);
+  --glass-border: rgba(196, 154, 108, 0.28);
+  --glass-blur: blur(20px);
+
+  /* === Layout === */
+  --navbar-height: 70px;
+  --sidebar-width: 280px;
+  --container-max: 1200px;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+}

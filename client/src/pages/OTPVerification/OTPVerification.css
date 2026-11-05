@@ -1,0 +1,41 @@
+.otp-container {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+.otp-card {
+  width: 100%;
+  max-width: 440px;
+  padding: var(--spacing-2xl);
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+.otp-box {
+  width: 45px;
+  height: 50px;
+  text-align: center;
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.otp-box:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}

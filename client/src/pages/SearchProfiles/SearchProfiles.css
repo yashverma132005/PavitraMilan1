@@ -1,0 +1,226 @@
+.browse-profiles-page {
+  min-height: 70vh;
+  width: 100%;
+  overflow-x: clip;
+}
+
+.browse-profiles-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: var(--spacing-xl);
+}
+
+.browse-profiles-heading h1 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.browse-filters {
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: var(--spacing-xl);
+}
+
+.browse-filters-title,
+.browse-filter-actions,
+.browse-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.browse-filters-title {
+  margin-bottom: var(--spacing-lg);
+}
+
+.browse-filters-title h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: 0;
+  font-size: var(--fs-lg);
+}
+
+.browse-sort,
+.browse-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+}
+
+.browse-sort .input-field,
+.browse-filter-field .input-field {
+  min-height: 42px;
+}
+
+.browse-sort {
+  width: min(260px, 100%);
+  min-width: 0;
+}
+
+.browse-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-md);
+}
+
+.browse-filter-field,
+.browse-filter-field .input-field,
+.browse-sort .input-field {
+  min-width: 0;
+  width: 100%;
+}
+
+.browse-filter-actions {
+  justify-content: flex-start;
+  margin-top: var(--spacing-lg);
+}
+
+.browse-filter-actions .btn.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.browse-profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: var(--spacing-lg);
+}
+
+.browse-results-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-2xl) var(--spacing-md);
+  text-align: center;
+}
+
+.browse-pagination {
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+}
+
+@media (max-width: 760px) {
+  .browse-profiles-page .container {
+    padding-inline: var(--spacing-md);
+  }
+
+  .browse-profiles-page .section {
+    padding-block: var(--spacing-2xl);
+  }
+
+  .browse-filters-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .browse-sort {
+    width: 100%;
+  }
+
+  .browse-filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .browse-profiles-heading {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .browse-profiles-heading h1 {
+    font-size: clamp(1.65rem, 8vw, var(--fs-3xl));
+  }
+
+  .browse-profiles-heading p {
+    max-width: 34ch;
+  }
+
+  .browse-filters {
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+  }
+
+  .browse-filter-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .browse-filter-field .input-field,
+  .browse-sort .input-field {
+    min-height: 44px;
+  }
+
+  .browse-filter-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .browse-filter-actions .btn {
+    min-height: 44px;
+    padding-inline: var(--spacing-sm);
+  }
+
+  .browse-profiles-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .browse-profiles-grid .profile-card-photo {
+    height: clamp(190px, 62vw, 250px);
+  }
+
+  .browse-profiles-grid .profile-card-footer {
+    flex-wrap: wrap;
+    padding-inline: var(--spacing-md);
+  }
+
+  .browse-profiles-grid .profile-card-footer .btn {
+    min-width: 0;
+    min-height: 42px;
+  }
+
+  .browse-pagination {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .browse-pagination span {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    text-align: center;
+  }
+
+  .browse-pagination .btn {
+    min-height: 42px;
+  }
+}
+
+@media (max-width: 360px) {
+  .browse-profiles-page .container {
+    padding-inline: 0.75rem;
+  }
+
+  .browse-filters {
+    padding: 0.875rem;
+  }
+
+  .browse-filter-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .browse-profiles-grid .profile-card-body {
+    padding: 0.875rem 1rem;
+  }
+
+  .browse-profiles-grid .profile-card-footer {
+    flex-direction: column;
+  }
+}

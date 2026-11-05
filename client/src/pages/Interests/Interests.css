@@ -1,0 +1,182 @@
+/* ============================================
+   Interests Page Styles
+   ============================================ */
+
+.interests-page {
+  padding: var(--spacing-2xl) 0;
+  min-height: calc(100vh - var(--navbar-height));
+}
+
+/* === Header === */
+.interests-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.interests-title {
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--spacing-xs);
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.interests-subtitle {
+  font-size: var(--fs-base);
+  color: var(--text-secondary);
+}
+
+/* === Tabs Override === */
+.interests-tabs {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* === Interests Content === */
+.interests-content {
+  min-height: 300px;
+}
+
+/* === Interests Grid === */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+/* === Interest Card === */
+.interest-card {
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.interest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.interest-card-top {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.interest-card-avatar {
+  flex-shrink: 0;
+}
+
+.interest-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.interest-card-name {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-primary);
+}
+
+.interest-card-meta {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.interest-card-date {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+/* === Message Quote === */
+.interest-card-message {
+  padding: var(--spacing-md);
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+  position: relative;
+}
+
+.interest-card-message p {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: var(--lh-relaxed);
+}
+
+/* === Card Actions === */
+.interest-card-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.interest-card-actions .btn {
+  flex: 1;
+}
+
+/* === Status Badge (Sent Tab) === */
+.interest-card-status {
+  justify-content: flex-start;
+}
+
+.interest-status-badge {
+  font-size: var(--fs-sm);
+  padding: 0.375rem 1rem;
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .interests-page {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .interests-title {
+    font-size: var(--fs-2xl);
+  }
+
+  .interests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interest-card {
+    padding: var(--spacing-md);
+  }
+
+  .interest-card-top {
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .interests-title {
+    font-size: var(--fs-xl);
+  }
+
+  .interest-card-name {
+    font-size: var(--fs-base);
+  }
+
+  .interest-card-message {
+    padding: var(--spacing-sm);
+  }
+
+  .interest-card-message p {
+    font-size: var(--fs-xs);
+  }
+
+  .interest-card-actions {
+    flex-direction: column;
+  }
+}

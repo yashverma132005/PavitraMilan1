@@ -1,0 +1,22 @@
+.notfound-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--bg-primary);
+  padding: var(--spacing-xl);
+}
+.notfound-content { animation: fadeInUp 0.6s ease; }
+.notfound-code {
+  font-size: 8rem;
+  font-weight: var(--fw-extrabold);
+  line-height: 1;
+  margin-bottom: var(--spacing-md);
+  animation: float 3s ease-in-out infinite;
+}
+.notfound-content h2 {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--spacing-sm);
+}
+@media (max-width: 480px) { .notfound-code { font-size: 5rem; } }

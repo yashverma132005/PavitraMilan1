@@ -1,0 +1,83 @@
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; height: var(--navbar-height); z-index: var(--z-sticky);
+  background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border); transition: all var(--transition-base);
+}
+.navbar-inner { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--spacing-lg); height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.navbar-logo { display: flex; align-items: center; gap: 0.375rem; font-size: var(--fs-xl); font-weight: var(--fw-extrabold); text-decoration: none; color: var(--text-primary); }
+.navbar-logo .logo-accent { color: var(--color-primary); }
+.navbar-links { display: flex; align-items: center; gap: 0.25rem; }
+.navbar-link {
+  padding: 0.5rem 1rem; font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--text-secondary);
+  text-decoration: none; border-radius: var(--radius-md); transition: all var(--transition-fast); position: relative;
+}
+.navbar-link:hover { color: var(--text-primary); background: var(--bg-hover); }
+.navbar-link.active { color: var(--color-primary); }
+.navbar-link.active::after {
+  content: ''; position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+  width: 20px; height: 2px; background: var(--color-primary); border-radius: 2px;
+}
+.navbar-actions { display: flex; align-items: center; gap: var(--spacing-sm); }
+.navbar-profile {
+  position: relative; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;
+  padding: 0.375rem 0.75rem; border-radius: var(--radius-full); transition: all var(--transition-fast);
+}
+.navbar-profile:hover { background: var(--bg-hover); }
+.navbar-profile-name { font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--text-primary); }
+.navbar-dropdown {
+  position: absolute; top: calc(100% + 0.5rem); right: 0; min-width: 180px;
+  background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg); padding: 0.375rem; animation: fadeInDown 0.2s ease; z-index: var(--z-dropdown);
+}
+.navbar-dropdown-item {
+  display: flex; align-items: center; gap: 0.5rem; width: 100%; padding: 0.625rem 0.875rem;
+  font-size: var(--fs-sm); color: var(--text-secondary); background: none; border: none; border-radius: var(--radius-md);
+  cursor: pointer; transition: all var(--transition-fast); text-decoration: none;
+}
+.navbar-dropdown-item:hover { background: var(--bg-hover); color: var(--text-primary); }
+.navbar-dropdown-item.danger { color: var(--color-error); }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem;
+}
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: all var(--transition-fast); }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--bg-primary);
+  padding: var(--spacing-lg);
+  z-index: var(--z-sticky);
+  transform: translate3d(100%, 0, 0);
+  visibility: hidden;
+  transition: transform 280ms cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0s linear 280ms;
+  will-change: transform;
+}
+.mobile-menu.open {
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
+  transition: transform 280ms cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0s;
+}
+.mobile-menu .navbar-link { display: block; padding: 0.875rem 1rem; font-size: var(--fs-lg); border-radius: var(--radius-md); }
+.mobile-menu .divider { margin: 0.75rem 0; }
+@media (max-width: 768px) {
+  .navbar-links { display: none; }
+  .navbar-profile-name { display: none; }
+  .navbar-language-toggle { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: block; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu,
+  .mobile-menu.open {
+    transition: none;
+  }
+}

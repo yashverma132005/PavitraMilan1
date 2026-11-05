@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "search": "Browse Profiles",
+    "interests": "Interests",
+    "matches": "Matches",
+    "about": "About",
+    "login": "Login",
+    "register": "Register",
+    "profile": "My Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "landing": {
+    "heroTitle1": "Find Your Perfect",
+    "heroTitle2": "Life Partner",
+    "heroSubtitle": "The premier matrimonial platform dedicated to helping you discover meaningful, verified, and secure matches within our community.",
+    "getStarted": "Get Started Free",
+    "learnMore": "Learn More",
+    "statsProfiles": "Active Profiles",
+    "statsMatches": "Happy Matches",
+    "statsSatisfaction": "Satisfaction Rate",
+    "statsCities": "Cities Covered",
+    "whyTitle": "Why Choose Pavitra Milan?",
+    "whySubtitle": "We prioritize security, trust, and simplicity to help you connect with genuine partner seekers.",
+    "featureVerified": "Verified Profiles",
+    "featureVerifiedDesc": "Every profile undergoes email, phone, and optional photo identity checks for maximum trust.",
+    "featureMatching": "Smart Partner Matching",
+    "featureMatchingDesc": "Specify partner criteria across diet, gotra, lifestyle, and locations for better matches.",
+    "featureContact": "Direct Contact Sharing",
+    "featureContactDesc": "No messy chat logs. Contact details are securely shared only when interests are mutually accepted.",
+    "howTitle": "How It Works",
+    "howSubtitle": "Four simple steps to find your life partner.",
+    "step1Title": "Register",
+    "step1Desc": "Create an account and complete your verified credentials.",
+    "step2Title": "Complete Profile",
+    "step2Desc": "Add detail on religion, gotra, lifestyle, preferences, and photos.",
+    "step3Title": "Send Interest",
+    "step3Desc": "Browse matched candidates and send connection interest requests.",
+    "step4Title": "Share Contacts",
+    "step4Desc": "Once accepted, instantly view each other's phone and email.",
+    "successTitle": "Success Stories",
+    "ctaTitle": "Ready to find your partner?",
+    "ctaSubtitle": "Register today and take the first step towards a happy marriage.",
+    "ctaButton": "Get Started Now"
+  },
+  "common": {
+    "tagline": "Connecting Hearts, Uniting Families"
+  }
+}

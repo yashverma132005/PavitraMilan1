@@ -1,0 +1,112 @@
+.login-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.login-visual-panel {
+  position: relative;
+  background: var(--gradient-hero);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3xl);
+  overflow: hidden;
+}
+
+.visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+.visual-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 500px;
+}
+
+.visual-content h2 {
+  font-size: var(--fs-4xl);
+  font-family: var(--font-display);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  line-height: var(--lh-tight);
+}
+
+.visual-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-relaxed);
+}
+
+.login-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  background: var(--bg-primary);
+}
+
+.login-form-wrapper {
+  width: 100%;
+  max-width: 480px;
+  padding: var(--spacing-2xl);
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--spacing-md);
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+.forgot-link {
+  font-size: var(--fs-sm);
+  color: var(--color-primary);
+  font-weight: var(--fw-medium);
+}
+
+.social-login-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.clerk-auth-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.clerk-auth-container .cl-rootBox {
+  width: 100%;
+}
+
+.clerk-auth-container .cl-card {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1024px) {
+  .login-container {
+    grid-template-columns: 1fr;
+  }
+  .login-visual-panel {
+    display: none;
+  }
+}

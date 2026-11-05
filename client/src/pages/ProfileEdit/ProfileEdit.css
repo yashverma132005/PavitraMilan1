@@ -1,0 +1,279 @@
+/* ============================================
+   ProfileEdit Page Styles
+   ============================================ */
+
+.edit-page {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  animation: fadeInUp 0.6s ease;
+}
+
+/* === Header === */
+.edit-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-2xl);
+  gap: var(--spacing-md);
+}
+
+.edit-page-header h1 {
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  line-height: var(--lh-tight);
+}
+
+/* === Tabs === */
+.edit-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--spacing-xl);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.edit-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.edit-tab {
+  padding: 0.75rem 1.5rem;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  color: var(--text-muted);
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+  font-family: var(--font-primary);
+}
+
+.edit-tab:hover {
+  color: var(--text-primary);
+}
+
+.edit-tab.active {
+  color: var(--color-primary);
+}
+
+.edit-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: 2px 2px 0 0;
+}
+
+/* === Tab Content === */
+.edit-tab-content {
+  animation: fadeIn 0.3s ease;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+}
+
+/* === Photo Edit Area === */
+.photo-edit-area {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto var(--spacing-xl);
+  cursor: pointer;
+}
+
+.photo-edit-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  border: 3px solid var(--border-color);
+  transition: border-color var(--transition-base);
+}
+
+.photo-edit-area:hover .photo-edit-avatar {
+  border-color: var(--color-primary);
+}
+
+.photo-edit-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  cursor: pointer;
+}
+
+.photo-edit-area:hover .photo-edit-overlay {
+  opacity: 1;
+}
+
+.photo-edit-overlay-icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.photo-edit-overlay-text {
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: var(--fw-medium);
+}
+
+/* === Form Grid === */
+.edit-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.edit-form-grid .input-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* === Section Title === */
+.edit-section-title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* === Form Actions === */
+.edit-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--border-color);
+}
+
+/* === Range Fields === */
+.edit-range-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.edit-range-group .range-separator {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  flex-shrink: 0;
+}
+
+.edit-range-group .input-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* === Input enhancements === */
+.edit-tab-content .input-field,
+.edit-tab-content .select-field,
+.edit-tab-content .textarea-field {
+  box-sizing: border-box;
+}
+
+.edit-tab-content .textarea-field {
+  min-height: 120px;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .edit-page {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .edit-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .edit-page-header .btn {
+    width: 100%;
+  }
+
+  .edit-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-form-grid .input-group.full-width {
+    grid-column: 1;
+  }
+
+  .edit-tab-content {
+    padding: var(--spacing-lg);
+  }
+
+  .photo-edit-area {
+    width: 110px;
+    height: 110px;
+  }
+
+  .photo-edit-avatar {
+    font-size: 2.25rem;
+  }
+
+  .edit-tabs {
+    gap: 0;
+  }
+
+  .edit-tab {
+    padding: 0.625rem 1rem;
+    font-size: var(--fs-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-page-header h1 {
+    font-size: var(--fs-2xl);
+  }
+
+  .edit-tab-content {
+    padding: var(--spacing-md);
+  }
+
+  .edit-form-actions {
+    flex-direction: column;
+  }
+
+  .edit-form-actions .btn {
+    width: 100%;
+  }
+
+  .edit-range-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .edit-range-group .range-separator {
+    text-align: center;
+  }
+}

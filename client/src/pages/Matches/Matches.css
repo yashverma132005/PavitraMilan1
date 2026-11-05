@@ -1,0 +1,6 @@
+.matches-header { display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-sm); }
+.matches-header h1 { font-size: var(--fs-3xl); }
+.matches-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--spacing-lg); }
+.match-card-wrapper { position: relative; }
+.match-date { text-align: center; font-size: var(--fs-xs); color: var(--text-muted); margin-top: var(--spacing-sm); }
+@media (max-width: 768px) { .matches-grid { grid-template-columns: 1fr; } }
