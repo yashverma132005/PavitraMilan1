@@ -1,355 +1,76 @@
-# Multi-Agent Development Prompt – Matrimonial Platform
+# Pavitra Milan
 
-You are a team of 4 expert AI software engineers collaborating to build a production-ready matrimonial platform.
+Pavitra Milan is a matrimonial platform with a React web client and an Express API. The app includes account access, profile creation and browsing, interests, matches, reporting, and profile settings.
 
-Project Name: HaihayaMilan
+## Stack
 
-Goal:
-Build a secure, scalable, modern matrimonial website that allows users to register, create detailed profiles, search compatible matches, send interests, chat after matching, and verify authenticity through multiple verification methods.
+- **Client:** React, Vite, React Router, Axios, Clerk
+- **API:** Node.js, Express, Clerk middleware
+- **Database:** PostgreSQL with Prisma
+- **Image storage:** Cloudinary
 
-Tech Stack:
+## Project layout
 
-Frontend:
+```text
+client/   React application
+server/   Express API and Prisma schema
+```
 
-* React
-* Vanilla CSS
-* React Router
-* Axios
+## Prerequisites
 
-Backend:
+- Node.js and npm
+- A PostgreSQL database
+- Clerk keys for authentication
+- Cloudinary credentials for image storage
 
-* Node.js
-* Express.js
+## Configuration
 
-Database:
+Copy the example environment files and fill in your own values:
 
-* PostgreSQL
-* Prisma ORM
+```powershell
+Copy-Item client/.env.example client/.env
+Copy-Item server/.env.example server/.env
+```
 
-Authentication:
+Set the database URLs, Clerk keys, and Cloudinary credentials in `server/.env`. Set the Clerk publishable key and API origin in `client/.env`. Keep real `.env` files private; they are ignored by Git.
 
-* Firebase Authentication
+## Run locally
 
-  * Phone OTP
-  * Email Verification
-  * Google Sign-In
+In one terminal, install and start the API:
 
-Storage:
+```powershell
+cd server
+npm install
+npx prisma generate
+npx prisma db push
+npm run dev
+```
 
-* Cloudinary
+In another terminal, install and start the client:
 
-Real-Time Features:
+```powershell
+cd client
+npm install
+npm run dev
+```
 
-* Socket.IO
+The client runs at `http://localhost:5173` and the API at `http://localhost:5000` by default. The API health endpoint is `http://localhost:5000/api/health`.
 
-Deployment:
+## Available commands
 
-* Vercel (Frontend)
-* Render (Backend)
+### Client (`client/`)
 
----
+- `npm run dev` — start the Vite development server
+- `npm run build` — build the production client
+- `npm run lint` — run ESLint
+- `npm run preview` — preview a production build
 
-# Agent 1 — Frontend Architect
+### API (`server/`)
 
-Responsibilities:
+- `npm run dev` — start the API with nodemon
+- `npm start` — start the API
+- `npm run db:generate` — generate the Prisma client
+- `npm run db:push` — apply the Prisma schema to the configured database
+- `npm run db:studio` — open Prisma Studio
+- `npm run seed` — load the sample data
 
-Design and develop all frontend pages and components.
-
-Pages:
-
-* Landing Page
-* Login
-* Registration
-* OTP Verification
-* Dashboard
-* Profile Creation
-* Profile Edit
-* Browse Profiles (filters and sorting)
-* Profile Details
-* Interests
-* Matches
-* Chat
-* Settings
-* Report User
-* About
-* Privacy Policy
-
-Requirements:
-
-* Mobile-first responsive design
-* Vanilla CSS only
-* Dark & Light Theme
-* Reusable component architecture
-* Form validation
-* Error handling
-* Loading states
-* Accessibility
-
-Deliverables:
-
-* Component hierarchy
-* Folder structure
-* Routing setup
-* CSS architecture
-* Complete frontend implementation
-
----
-
-# Agent 2 — Backend Engineer
-
-Responsibilities:
-
-Build the complete backend API.
-
-Authentication:
-
-* Firebase Integration
-* JWT Session Handling
-* Route Protection
-
-APIs:
-
-Users
-
-* Register
-* Login
-* Update User
-* Delete User
-
-Profiles
-
-* Create Profile
-* Update Profile
-* View Profile
-* Browse Profiles with Filters and Sorting
-
-Interests
-
-* Send Interest
-* Accept Interest
-* Reject Interest
-
-Matches
-
-* Create Match
-* Fetch Matches
-
-Messages
-
-* Send Message
-* Fetch Conversation
-
-Reports
-
-* Report User
-* Block User
-
-Requirements:
-
-* RESTful architecture
-* MVC structure
-* Validation middleware
-* Rate limiting
-* Helmet security
-* Error handling
-
-Deliverables:
-
-* API routes
-* Controllers
-* Services
-* Middleware
-* API documentation
-
----
-
-# Agent 3 — Database & Realtime Engineer
-
-Responsibilities:
-
-Design database and realtime systems.
-
-Database Models:
-
-Users
-Profiles
-PartnerPreferences
-Interests
-Matches
-Messages
-Reports
-BlockedUsers
-VerificationRequests
-Notifications
-
-Requirements:
-
-* Prisma schema
-* Foreign key relationships
-* Optimized indexing
-* Profile search optimization
-* Migration scripts
-
-Realtime Features:
-
-* Socket.IO server
-* Private messaging
-* Online status
-* Typing indicators
-* Read receipts
-
-Deliverables:
-
-* Database schema
-* ER diagram
-* Prisma models
-* Realtime architecture
-
----
-
-# Agent 4 — Security, Verification & Product Lead
-
-Responsibilities:
-
-Design trust, verification, moderation, and deployment systems.
-
-Verification:
-
-* Mobile OTP Verification
-* Email Verification
-* Photograph Verification
-* Optional Government ID Upload
-* Verification Badge System
-
-Moderation:
-
-* Report User
-* Block User
-* Admin Review Queue
-* Fake Profile Detection
-* Suspicious Activity Monitoring
-
-Security:
-
-* JWT Security
-* Input Sanitization
-* Environment Variables
-* File Upload Validation
-* Access Control
-
-Deployment:
-
-* Vercel Configuration
-* Render Configuration
-* Environment Setup
-* CI/CD Recommendations
-
-Documentation:
-
-* README
-* Setup Guide
-* Deployment Guide
-* API Documentation
-
-Deliverables:
-
-* Security architecture
-* Verification workflow
-* Moderation workflow
-* Deployment plan
-
----
-
-# Registration Form Requirements
-
-Create a 4-step registration process.
-
-Step 1: Personal Details
-
-* Full Name
-* Gender
-* Date of Birth
-* Age (Auto Calculated)
-* Birth Time
-* Marital Status
-* Height
-* Weight
-* Blood Group
-* Profile Photo
-* Mobile Number
-* Email Address
-* City
-* State
-* Country
-* About Me
-* Expectations From Life Partner
-
-Step 2: Education & Career
-
-* Highest Qualification
-* College/University
-* Occupation
-* Company Name
-* Annual Income
-* Work Location
-
-Step 3: Family & Religion
-
-* Father's Name
-* Father's Occupation
-* Mother's Name
-* Mother's Occupation
-* Number of Brothers
-* Number of Sisters
-* Family Type
-* Family Status
-* Religion
-* Caste
-* Sub-Caste
-* Gotra
-* Manglik Status
-* Mother Tongue
-
-Optional Horoscope:
-
-* Date of Birth
-* Time of Birth
-* Place of Birth
-
-Lifestyle:
-
-* Diet
-* Smoking Habit
-* Drinking Habit
-* Hobbies & Interests
-
-Step 4: Partner Preferences
-
-* Preferred Age Range
-* Preferred Height Range
-* Preferred Education
-* Preferred Occupation
-* Preferred Location
-* Preferred Religion/Caste
-* Other Expectations
-
----
-
-# Success Criteria
-
-The final system must support:
-
-Register → Verify Account → Complete Profile → Browse Profiles → Send Interest → Accept Interest → Match → Share WhatsApp Contact → Report/Block User
-
-Generate:
-
-* Complete architecture
-* Folder structure
-* Database schema
-* API design
-* UI design
-* Security strategy
-* Deployment strategy
-* Documentation
-
-Act as a coordinated team and ensure all agents produce compatible outputs.
